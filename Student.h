@@ -17,6 +17,8 @@ private:
 public:
     //override
     long hash(long _arraySize){
+        if(this->id < 0)
+            return this->hash(this->id+_arraySize);
         return this->id%_arraySize;
     }
 
