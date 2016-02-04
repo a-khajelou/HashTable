@@ -16,10 +16,14 @@ private:
 
 public:
     //override
-    long hash(long _arraySize){
+    long hash(long _arraySize) const {
         if(this->id < 0)
             return this->hash(this->id+_arraySize);
         return this->id%_arraySize;
+    }
+
+    Student(){
+
     }
 
     Student(char *_name, long _id){
